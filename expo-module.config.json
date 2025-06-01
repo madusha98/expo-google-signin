@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["ExpoGoogleSigninModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.googlesignin.ExpoGoogleSigninModule"]
+  }
+}

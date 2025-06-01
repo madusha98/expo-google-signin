@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-google-signin": ["../src/index"],
+      "expo-google-signin/*": ["../src/*"]
+    }
+  }
+}
