@@ -70,7 +70,7 @@ class ExpoGoogleSigninModule : Module() {
             }
         }
 
-        AsyncFunction("signInAsync") { webClientId: String, scopes: List<String>?, promise: Promise ->
+        AsyncFunction("signInAsync") { webClientId: String, scopes: List<String>?, forceCodeForRefreshToken: Boolean?, promise: Promise ->
             val activity = appContext.currentActivity
             if (activity == null) {
                 promise.reject("ERR_NO_ACTIVITY", "No current activity", null)
@@ -92,6 +92,7 @@ class ExpoGoogleSigninModule : Module() {
                     googleSignInManager.handleAuthorization(
                         webClientId,
                         scopes,
+                        forceCodeForRefreshToken ?: false,
                         onPendingIntent = { pendingIntent ->
                             try {
                                 // Wrap the IntentSender in an IntentSenderRequest
