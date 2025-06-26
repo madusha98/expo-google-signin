@@ -68,6 +68,7 @@ class GoogleSignInManager(private val context: Context) {
     fun handleAuthorization(
         clientId: String,
         scopes: List<String>?,
+        forceCodeForRefreshToken: Boolean,
         onPendingIntent: (PendingIntent) -> Unit,
         onAlreadyAuthorized: (String?) -> Unit,
         onError: (Exception) -> Unit
@@ -78,7 +79,7 @@ class GoogleSignInManager(private val context: Context) {
         )).map { Scope(it) }
 
         val authorizationRequest = AuthorizationRequest.Builder()
-            .requestOfflineAccess(clientId)
+            .requestOfflineAccess(clientId, forceCodeForRefreshToken)
             .setRequestedScopes(requestedScopes.toMutableList())
             .build()
 
