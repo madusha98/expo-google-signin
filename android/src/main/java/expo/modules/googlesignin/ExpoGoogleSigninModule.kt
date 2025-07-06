@@ -18,7 +18,6 @@ class ExpoGoogleSigninModule : Module() {
     private var signInPromise: Promise? = null
     private var authLauncher: androidx.activity.result.ActivityResultLauncher<IntentSenderRequest>? = null
 
-    @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun definition() = ModuleDefinition {
         Name("ExpoGoogleSignin")
 
