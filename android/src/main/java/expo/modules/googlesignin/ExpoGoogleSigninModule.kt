@@ -1,10 +1,8 @@
 package expo.modules.googlesignin
 
 import android.app.Activity
-import android.os.Build
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import expo.modules.kotlin.Promise
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
@@ -18,7 +16,6 @@ class ExpoGoogleSigninModule : Module() {
     private var signInPromise: Promise? = null
     private var authLauncher: androidx.activity.result.ActivityResultLauncher<IntentSenderRequest>? = null
 
-    @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     override fun definition() = ModuleDefinition {
         Name("ExpoGoogleSignin")
 
