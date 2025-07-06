@@ -1,10 +1,8 @@
 package expo.modules.googlesignin
 
 import android.app.Activity
-import android.os.Build
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import expo.modules.kotlin.Promise
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
